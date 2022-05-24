@@ -1,6 +1,11 @@
 <?php
-include_once ('inc/C_Page.php');
-include_once ('inc/C_User.php');
+// include_once ('inc/C_Page.php');
+// include_once ('inc/C_User.php');
+
+function __autoload($classname){
+	include_once("inc/$classname.php");
+}
+
 
 $action="action_";
 $action.= ($_GET['act'])?$_GET['act']:'index';

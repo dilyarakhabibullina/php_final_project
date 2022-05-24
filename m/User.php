@@ -17,9 +17,15 @@ class User {
     public function connecting () {
         return new PDO(DRIVER . ':host=' . SERVER . ';dbname=' . DB, USERNAME, PASSWORD);
     }
+    // public function get ($id) {
+    //     return $this->connect->query("SELECT * FROM users WHERE id = '" . $id . "'")->fetch();
+    // }
+
     public function get ($id) {
-        return $this->connect->query("SELECT * FROM users WHERE id = '" . $id . "'")->fetch();
+       return  $this->connect->query("SELECT * FROM users WHERE id = '" . $id . "'")->fetch();
     }
+
+
     public function newR ($name, $login, $password) {
         $user = $this->connect->query("SELECT * from users WHERE login = '" . $login . "' ")->fetch();
         if (!$user) {
@@ -28,25 +34,39 @@ class User {
 
             }     }
             else {
-                return "Такой логин уже есть";
+            return "Такой пользователь есть";
+            //print_r($user);
             }
     }
     public function login ($login, $password) {
         $user = $this->connect->query("SELECT * from users WHERE login = '" . $login . "' ")->fetch();
         
         if ($user) {
-            if ($user['password'] == $password
+            if ($user['password'] == $password) {
             // pass($user['name'], strip_tags($password))
-            ) {
+            $_SESSION['user_id'] = $user['id'];
                // $_SESSION['user_id'] = $user['id'];
-                return 'Добро пожаловать в систему, ' . $user['name'] . '!';
+                return 'Добро пожаловать в систему, ' . $user['name'] . $user['id'] .$_SESSION['user_id']. print_r($_SESSION).'!';
             } else {
                 return 'Пароль не верный!';}
             } else {
                 return 'Пользователь с таким логином не зарегистрирован!';
             }
             }
-        
+        // public function login ($login, $password) {
+		// 	$user = $this->connect->query("SELECT * FROM users WHERE login = '" . $login . "'")->fetch();
+		// 	if ($user) {
+		// 		if ($user['password'] == $password) {
+    	// 			$_SESSION['user_id'] = $user['id'];
+    	// 			return 'Добро пожаловать в систему, ' . $user['name'] . '!';
+		// 		} else {
+		// 			return 'Пароль не верный!';
+		// 		}
+		// 	} else {
+		// 		return 'Пользователь с таким логином не зарегистрирован!';
+		// 	}
+		// }
+
     
         public function logout () {
             if ($_SESSION["user_id"]) {
@@ -57,5 +77,5 @@ class User {
             return false;
         }
         }
-        //print_r ($user);
+        
 ?>

@@ -1,5 +1,6 @@
 <?php
 include 'Controller.php';
+include_once 'm/User.php';
 
 class C_Base extends Controller {
 protected $title;
@@ -11,8 +12,14 @@ public function __construct (){
 }
 
 public function render () {
-    
-$vars = array ('title' => $this->title, 'content'=>$this->content);
+
+$get_user = new User();
+if ($_SESSION['user_id']) {
+    $user_info = $get_user->get($_SESSION['user_id']);
+}
+else {$user_info = false;};
+
+$vars = array ('title' => $this->title, 'content'=>$this->content, 'user'=>$user_info['name']);
 $page = $this->Template('theme/v_main.php', $vars);
 echo $page;
 }

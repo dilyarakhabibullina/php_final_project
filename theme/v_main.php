@@ -12,18 +12,16 @@
         <h2><?=$title?></h2> 
     </div>
     <div id="menu">
-        <a href="index.php">Главная страница-Читать текст</a> |
-        <a href="index.php?contr=edit&act=edit">Редактировать текст</a> |
-        <?php
-        if ($user) {?>
-        <a href="index.php?contr=user&act=info">Личный кабинет</a>|<a href="index.php?contr=user&act=logout">Выход (<?=$user?>)</a>;
-        <?php }
-
-        else {?>
- <a href="index.php?contr=user&act=login">Войти</a>|<a href="index.php?contr=user&act=reg">Регистрация</a>
-    <?php }
-        ?>
-          </div>
+		<a href="index.php">На главную</a> | 
+		<a href="index.php?contr=page&act=edit">Редактировать</a> | 
+		<?php
+			if ($user) {
+				echo '<a href="index.php?contr=user&act=info">Личный кабинет</a> | <a href="index.php?contr=user&act=logout">Выйти('. $user .')</a>';
+			} else {
+				echo '<a href="index.php?contr=user&act=login">Войти</a> | <a href="index.php?contr=user&act=reg">Регистрация</a>';
+			}
+		?>
+	</div>
     <div id="content">
         <?=$content?>
     </div>
