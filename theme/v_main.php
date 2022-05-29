@@ -13,6 +13,7 @@
     </div>
     <div id="menu">
 		<a href="index.php">На главную</a> | 
+        <a href="index.php?contr=catalog&act=show">Каталог товаров</a> | 
 		<a href="index.php?contr=page&act=edit">Редактировать</a> | 
 		<?php
 			if ($user) {

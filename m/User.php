@@ -1,5 +1,5 @@
 <?php
-include 'config/db.php';
+include 'config/config.php';
 
 class User {
 
@@ -15,7 +15,7 @@ class User {
     }
 
     public function connecting () {
-        return new PDO(DRIVER . ':host=' . SERVER . ';dbname=' . DB, USERNAME, PASSWORD);
+        return new PDO(DB_DRIVER . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
     }
     // public function get ($id) {
     //     return $this->connect->query("SELECT * FROM users WHERE id = '" . $id . "'")->fetch();
