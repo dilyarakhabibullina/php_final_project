@@ -1,8 +1,6 @@
 <?php
-include "config/config.php";
-
-
-
+//include "config/config.php";
+//include "inc/C_Catalog.php"
 ?>
 <!DOCTYPE html>
 
@@ -32,11 +30,11 @@ include "config/config.php";
             <div class="burgerGroup">
                 <a href="#"><img src="img/burger.svg" alt="menu"></a>
                 <a href="#"><img src="img/Forma 1-1.svg" alt="login"></a>
-                <a href="#"><img src="img/Forma 1-2.svg" alt="basket"></a>
+                <a href="index.php?contr=basket&act=view"><img src="img/Forma 1-2.svg" alt="basket"></a>
             </div>
         </div>
     </header>
-    <div class="breadcrumb">
+        <div class="breadcrumb">
         <div class="newArrivals">
             <a href="#" class="newArrivalsLink">NEW ARRIVALS</a>
         </div>
@@ -147,10 +145,10 @@ include "config/config.php";
 
         </div>
         <div class="items_box">
-            <?php
-            foreach ($row as $rows){?>
+           <?php
+            foreach ($catalog_array as $rows){?>
             <div class="item_card">
-                <a href="#" class="item-link">
+                <a style="text-decoration: none" href="?contr=catalog&act=showGood&id_good=<?=$rows["id"]?>">
                     <img class="item_img" src="img/<?= $rows['image']?>"> 
                     <div class="txt-box">
                         <h2 class="card_heading"><?= strtoupper($rows['title'])?></h2>
@@ -158,15 +156,20 @@ include "config/config.php";
                         <div class="card_price">RUR<?= $rows['price']?></div>
                     </div>
                     <div class="add-box">
+
+                    <form method="post" action="index.php?contr=basket&amp;act=add"><div class="form-group"> <label for="points">Количество</label> <input class="form-control" type="number" name="counts" value="1"><button class="btn btn-primary" type="submit" name="id_good" value="<?=$rows["id"]?>">Купить</button></div></form>
                         <a href="#" class="add">
                             <img class="add-img" src="img/Forma 1-2.svg" alt="cart">
                             <p class="add-txt">Add to Cart</p>
                         </a>
+                        
                     </div>
-            </div>
+            </form></>
+                </div>
         <?php
         
     }
+    $count = count($catalog_array); 
         ?>
             
         </div>

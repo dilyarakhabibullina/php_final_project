@@ -9,8 +9,10 @@ spl_autoload_register("NewStandarAutoloader");
 function NewStandarAutoloader ($className)
 {
 	$dirs=['inc',
-		   'm',
-		   'lib'];
+		//    'm',
+		   'lib'
+		//    ,'config'
+	];
 	$found=false;
     foreach($dirs as $dir)
 		{
@@ -46,6 +48,9 @@ switch ($_GET['contr']){
 	case 'basket':
 		$controller = new C_Basket();
 			break;
+	case 'order':
+		$controller = new C_Order();
+		break;
     default:
     $controller= new C_Page();
 }

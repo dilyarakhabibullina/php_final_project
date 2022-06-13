@@ -10,6 +10,9 @@ header {
     background-color: #222222;
 
 }
+a {
+    text-decoration: none;
+   }
 input {
     outline: none;
 }

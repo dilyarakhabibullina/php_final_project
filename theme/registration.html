@@ -11,7 +11,7 @@
         rel="stylesheet">
     <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    <title>Product</title>
+    <title>Registration</title>
 </head>
 
 <body>
@@ -79,130 +79,57 @@
 
     </header>
 
-    <header class="product">
-        <div class="container product__header">
-            <h1>new arrivals</h1>
-            <nav>
-                <ul class="product__breadcrumbs">
-                    <li><a href="index.html">home</a></li>
-                    <li><a href="#">men</a></li>
-                    <li>new arrivals</li>
-                </ul>
-            </nav>
+    <header class="reg">
+        <div class="container reg__header">
+            <h1>registration</h1>
         </div>
     </header>
 
     <main>
-
-        <section class="product__img">
-            <button class="product__img__button"><span class=" iconify pib__icon" data-inline="false"
-                    data-icon="dashicons:arrow-left-alt2"></span>
-            </button>
-            <div class="product__img-img">
-                <img src="./img/product_photo.jpg" alt="photo">
-            </div>
-            <button class="product__img__button"><span class="iconify pib__icon" data-inline="false"
-                    data-icon="dashicons:arrow-right-alt2"></span>
-            </button>
-        </section>
-
-        <section>
-            <div class="container product__info">
-                <p class="product__info__h">women collection</p>
-                <span></span>
-                <h3>moschino cheal and chic</h3>
-                <p class="product__info__text">Compellingly actualize fully researched processes before proactive
-                    outsourcing. Progressively
-                    syndicate collaborative
-                    architectures before cutting-edge services. Completely visualize parallel core competencies rather
-                    than exceptional
-                    portals.</p>
-                <p class="product__info__price">$561</p>
-                <hr>
-                <div class="product__info__features">
-                    <button class="features features_hov-pink">choose color <span class="iconify features_icon"
-                            data-inline="false" data-icon="majesticons:chevron-down-line"></span></button>
-                    <button class="features features_hov-pink">choose size <span class="iconify features_icon"
-                            data-inline="false" data-icon="majesticons:chevron-down-line"></span></button>
-                    <button class="features features_hov-pink">quantity <span class="iconify features_icon"
-                            data-inline="false" data-icon="majesticons:chevron-down-line"></span></button>
-                </div>
-                <button class="product__info__button" type="submit"><span class="iconify pib__icon" data-inline="false"
-                        data-icon="mdi-light:cart"></span><span class="pib__text">Add to
-                        Cart</span></button>
-            </div>
-        </section>
-
-        <section>
-            <div class="container products__bottom">
-
-                <article class="card">
-                    <a href="product.html">
-                        <img class="card__img" src="./img/card1.jpg" alt="card1">
-                        <div class="card__text">
-                            <h4>ellery x m'o capsule</h4>
-                            <p>Known for her sculptural takes on traditional tailoring,
-                                Australian
-                                arbiter of cool
-                                Kym Ellery teams up with Moda
-                                Operandi.</p>
-                            <p class="price">$52.00</p>
-                        </div>
-                    </a>
-                    <div class="card-add">
-                        <a class="card-add__cart" href="#">
-                            <span class="iconify cart_icon" data-inline="false" data-icon="mdi-light:cart"></span>
-                            <p>Add to Cart</p>
-                        </a>
+        <div class="container registration">
+            <section class="reg__input">
+                <form class="reg__form" action="#">
+                    <h4>Your Name</h4>
+                    <input class="input__name" type="text" placeholder="First Name" autofocus required>
+                    <input class="input__last" type="text" placeholder="Last Name" required>
+                    <div class="check__gender">
+                        <input type="radio" name="gender" id="men" checked> <label class="check__label"
+                            for="men">Male</label>
+                        <input type="radio" name="gender" id="women"> <label class="check__label"
+                            for="women">Female</label>
                     </div>
-                </article>
+                    <h4>Login details</h4>
+                    <input class="input__mail" type="email" placeholder="Email" required>
+                    <input class="input__pass" type="password" placeholder="Password" required minlength="8">
+                    <p class="text__reg">Please use 8 or more characters, with at least 1 number and a mixture of
+                        uppercase and lowercase
+                        letters</p>
+                    <button class="reg__submit" type="submit">join now <span class="iconify icon__submit"
+                            data-inline="false" data-icon="bi:arrow-right" style="font-size: 20px;"></span></button>
+                </form>
+            </section>
 
-                <article class="card">
-                    <a class="card_link" href="product.html">
-                        <img class="card__img" src="./img/card2.jpg" alt="card2">
-                        <div class="card__text">
-                            <h4>ellery x m'o capsule</h4>
-                            <p>Known for her sculptural takes on traditional tailoring,
-                                Australian
-                                arbiter of cool
-                                Kym Ellery teams up with Moda
-                                Operandi.</p>
-                            <p class="price">$52.00</p>
-                        </div>
-                    </a>
-                    <div class="card-add">
-                        <a class="card-add__cart" href="#">
-                            <span class="iconify cart_icon" data-inline="false" data-icon="mdi-light:cart"></span>
-                            <p>Add to Cart</p>
-                        </a>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <a class="card_link" href="product.html">
-                        <img class="card__img" src="./img/card3.jpg" alt="card3">
-                        <div class="card__text">
-                            <h4>ellery x m'o capsule</h4>
-                            <p>Known for her sculptural takes on traditional tailoring,
-                                Australian
-                                arbiter of cool
-                                Kym Ellery teams up with Moda
-                                Operandi.</p>
-                            <p class="price">$52.00</p>
-                        </div>
-                    </a>
-                    <div class="card-add">
-                        <a class="card-add__cart" href="#">
-                            <span class="iconify cart_icon" data-inline="false" data-icon="mdi-light:cart"></span>
-                            <p>Add to Cart</p>
-                        </a>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
+            <section class="reg__info">
+                <h2>loyalty has its perks</h2>
+                <p>Get in on the loyalty program where you can earn points and unlock serious perks. Starting with these
+                    as
+                    soon as you
+                    join:</p>
+                <p><span class="iconify icon__text" data-inline="false" data-icon="websymbol:ok"></span>15%
+                    off welcome offer</p>
+                <p><span class="iconify icon__text" data-inline="false" data-icon="websymbol:ok"></span>Free
+                    shipping, returns and exchanges on all orders</p>
+                <p><span class="iconify icon__text" data-inline="false" data-icon="websymbol:ok"></span>$10
+                    off a purchase on your birthday</p>
+                <p><span class="iconify icon__text" data-inline="false" data-icon="websymbol:ok"></span>Early
+                    access to products</p>
+                <p><span class="iconify icon__text" data-inline="false" data-icon="websymbol:ok"></span>Exclusive offers
+                    &
+                    rewards</p>
+            </section>
+        </div>
     </main>
+
 
     <footer class="footer">
 

@@ -1,6 +1,8 @@
 <?php
 include 'Controller.php';
 include_once 'm/User.php';
+//include 'config/config.php';
+//include 'm/Catalog.php';
 
 class C_Base extends Controller {
 protected $title;

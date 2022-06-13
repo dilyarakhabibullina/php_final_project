@@ -1,35 +1,36 @@
 <?php
-include 'config/config.php';
+//include 'config/config.php';
+include_once 'DB.php';
 
 class User {
 
     public $user_id, $user_login, $user_name, $user_password;
-    private $connect;
+   // private $connect;
 
-    public function __construct () {
-        $this->connect = $this->connecting();
-    }
+    // public function __construct () {
+    //     $this->connect = $this->connecting();
+    // }
 
     public function pass ($name, $password) {
         return strrev(md5($name)) . md5($password);
     }
 
-    public function connecting () {
-        return new PDO(DB_DRIVER . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
-    }
+    // public function connecting () {
+    //     return new PDO(DB_DRIVER . ':host=' . DB_HOST . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+    // }
     // public function get ($id) {
     //     return $this->connect->query("SELECT * FROM users WHERE id = '" . $id . "'")->fetch();
     // }
 
     public function get ($id) {
-       return  $this->connect->query("SELECT * FROM users WHERE id = '" . $id . "'")->fetch();
+       return  DB::instance()->query("SELECT * FROM users WHERE id = '" . $id . "'")->fetch();
     }
 
 
     public function newR ($name, $login, $password) {
-        $user = $this->connect->query("SELECT * from users WHERE login = '" . $login . "' ")->fetch();
+        $user = DB::instance()->query("SELECT * from users WHERE login = '" . $login . "' ")->fetch();
         if (!$user) {
-            if($this->connect->exec("INSERT INTO users VALUES (null, '" . $name . "', '" . $login . "', '" . $password . "')")){
+            if(DB::instance()->exec("INSERT INTO users VALUES (null, '" . $name . "', '" . $login . "', '" . $password . "', 0)")){
                 return "Ты зарегистрировался";
 
             }     }
@@ -39,7 +40,7 @@ class User {
             }
     }
     public function login ($login, $password) {
-        $user = $this->connect->query("SELECT * from users WHERE login = '" . $login . "' ")->fetch();
+        $user = DB::instance()->query("SELECT * from users WHERE login = '" . $login . "' ")->fetch();
         
         if ($user) {
             if ($user['password'] == $password) {

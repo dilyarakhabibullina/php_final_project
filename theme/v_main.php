@@ -10,6 +10,8 @@
 <body>
     <div id="header">
         <h2><?=$title?></h2> 
+        
+
     </div>
     <div id="menu">
 		<a href="index.php">На главную</a> | 

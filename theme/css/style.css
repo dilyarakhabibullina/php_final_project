@@ -113,6 +113,10 @@ main {
           box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+   }
+
 .container {
   max-width: 1160px;
   width: 100%;
